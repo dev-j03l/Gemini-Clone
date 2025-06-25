@@ -1,4 +1,3 @@
-// server/gemini.js
 import express from 'express';
 import dotenv from 'dotenv';
 import { GoogleGenAI } from '@google/genai';
@@ -14,12 +13,14 @@ router.post('/generate', async (req, res) => {
   try {
     const result = await ai.models.generateContent({
       model: 'gemini-2.0-flash',
-      contents: prompt,
+      contents: [{ role: 'user', parts: [{ text: prompt }] }],
     });
 
-    res.json({ text: result.response.text() });
+    const text = result.candidates?.[0]?.content?.parts?.[0]?.text || "No response from Gemini.";
+    res.json({ text });
   } catch (err) {
-    res.status(500).json({ error: 'Failed to generate content.' });
+    console.error("Gemini API Error:", err);
+    res.status(500).json({ error: err.message || 'Failed to generate content.' });
   }
 });
 

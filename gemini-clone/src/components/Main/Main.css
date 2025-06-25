@@ -1,120 +1,167 @@
-.main{
-    flex:1;
-    min-height: 100vh;
-    padding-bottom: 15vh;
-    position: relative;   
+.main {
+  flex: 1;  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.main .nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 22px;
-    padding: 20px;
-    color: #585858;   
+.main .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+  padding: 20px;
+  color: #585858;
 }
 
-.main .nav img{
-    width: 40px;
-    border-radius: 50%;
+.main .nav img {
+  width: 40px;
+  border-radius: 50%;
 }
 
-.main-container{
-    max-width: 900px;
-    margin: auto;
+.main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
 }
 
-.main .greet{
-    margin: 50px 0px;
-    font-size: 56px;
-    color: #c4c7c5;
-    font-weight: 500;
-    padding: 20px;
+.main .greet {
+  margin: 30px 0 10px;
+  font-size: 40px;
+  color: #c4c7c5;
+  font-weight: 500;
+  padding: 20px;
 }
 
 .main .greet span {
-    background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.main .cards{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 15px;
-    padding: 20px;
+.main .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
 }
 
-.main .card{
-    height: 200px;
-    padding: 15px;
-    background-color: #f0f4f9;
-    border-radius: 10px;
-    position: relative;
-    cursor: pointer;
+.main .card {
+  height: 200px;
+  padding: 15px;
+  background-color: #f0f4f9;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
 }
 
-.main .card img{
-    width: 35px;
-    padding: 5px;
-    position: absolute;
-    background-color: white;
-    border-radius: 20px;
-    bottom: 10px;
-    right: 10px;
+.main .card img {
+  width: 35px;
+  padding: 5px;
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  bottom: 10px;
+  right: 10px;
 }
 
-.main .card p{
-    color: #585858;
-    font-size: 17px;
+.main .card p {
+  color: #585858;
+  font-size: 17px;
 }
 
-.main .card:hover{
-    background-color: #dfe4ea;
+.main .card:hover {
+  background-color: #dfe4ea;
 }
 
-.main-bottom{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    max-width: 900px;
-    padding: 0px 20px;
-    margin: auto;
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 10px;
 }
 
-.search-box{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    background-color: #f0f4f9;
-    padding: 10px 20px;
-    border-radius: 50px;
+.chat-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
 }
 
-.search-box img{
-    width: 24px;
-    cursor: pointer;
+.chat-message p {
+  padding: 10px 14px;
+  border-radius: 10px;
+  max-width: 70%;
+  line-height: 1.5;
+  font-size: 16px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
-.search-box input{
-    flex: 1;
-    background: transparent;
-    border: none;
-    outline: none;
-    padding: 8px;
-    font-size: 18px;
+.chat-message.user p {
+  background-color: #e0f7fa;
+  align-self: flex-end;
 }
 
-.search-box div{
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.chat-message.model p {
+  background-color: #f1f1f1;
 }
 
-.main .bottom-info{
-    font-size: 13px;
-    margin: 15px auto;
-    text-align: center;
-    font-weight: 300;
+.chat-message img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.main-bottom {
+  padding: 16px 20px;
+  background: white;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #f0f4f9;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.search-box img {
+  width: 24px;
+  cursor: pointer;
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 18px;
+}
+
+.search-box div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.main .bottom-info {
+  font-size: 13px;
+  margin: 10px auto 0;
+  text-align: center;
+  font-weight: 300;
 }
